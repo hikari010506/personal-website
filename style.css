@@ -1,7 +1,7 @@
 /* ===========================
    Google Font & Global Reset
 =========================== */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -35,6 +35,7 @@ html, body {
 =========================== */
 
 .book-wrapper {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,6 +47,7 @@ html, body {
 #book {
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .stpageflip--page,
@@ -99,6 +101,14 @@ html, body {
     align-items: center;
 }
 
+.welcome-img {
+    max-width: 180px;
+    max-height: 220px;
+    object-fit: contain;
+    margin-top: 20px;
+    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.4));
+}
+
 .profile {
     width: 120px;
     height: 120px;
@@ -111,8 +121,9 @@ html, body {
 }
 
 .hero-card h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: #9cb2d6;
+    line-height: 1.3;
 }
 
 .subtitle {
@@ -255,7 +266,7 @@ footer {
 }
 
 /* ===========================
-   KAITO Gallery (Page 7)
+   KAITO Gallery (Page 8)
 =========================== */
 
 .gallery-card {
@@ -289,4 +300,62 @@ footer {
 
 .kaito-img-box img:hover {
     transform: scale(1.05);
+}
+
+/* ===========================
+   Navigation Buttons & Mobile
+=========================== */
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(26, 30, 41, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #9cb2d6;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-btn:hover {
+    background: #5F7FA8;
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
+}
+
+@media (max-width: 600px) {
+    .nav-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    .left-btn {
+        left: 5px;
+    }
+
+    .right-btn {
+        right: 5px;
+    }
+
+    .page-content {
+        padding: 16px 12px;
+    }
 }
