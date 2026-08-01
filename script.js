@@ -1,47 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const isMobile = window.innerWidth <= 600;
+
     const pageFlip = new St.PageFlip(document.getElementById('book'), {
-        width: 400,          // base page width
-        height: 550,         // base page height
+        width: isMobile ? window.innerWidth - 30 : 400,
+        height: isMobile ? window.innerHeight - 80 : 550,
         size: 'stretch',
-        minWidth: 300,
+        minWidth: 280,
         maxWidth: 500,
         minHeight: 400,
-        maxHeight: 700,
+        maxHeight: 750,
         maxShadowOpacity: 0.5,
         showCover: true,
-        mobileScrollSupport: false // Prevents touch drag conflict on mobile
+        usePortrait: isMobile,       // 👈 Displays 1 page at a time on phones
+        clickToFlip: false,         
+        mobileScrollSupport: true    // 👈 Allows vertical scroll inside cards
     });
 
-    // Load pages
     pageFlip.loadFromHTML(document.querySelectorAll('.page'));
 
-    // --- AUTOMATIC PAGE TURN ON TAP ---
-    const bookContainer = document.getElementById('book');
-
-    bookContainer.addEventListener('click', (e) => {
-        // Prevent accidental page flip if clicking on links or social buttons
-        if (e.target.closest('a') || e.target.closest('button')) {
-            return;
-        }
-
-        const rect = bookContainer.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        const width = rect.width;
-
-        // If clicked on the right half -> turn to next page
-        if (clickX > width / 2) {
-            pageFlip.flipNext();
-        } 
-        // If clicked on the left half -> turn to previous page
-        else {
-            pageFlip.flipPrev();
-        }
+    // Responsive resize handler
+    window.addEventListener('resize', () => {
+        const mobileCheck = window.innerWidth <= 600;
+        pageFlip.updateFromHtml(document.querySelectorAll('.page'));
     });
 
-    // Mobile Arrow Controls Support
-    const prevBtn = document.getElementById('prev-page-btn');
-    const nextBtn = document.getElementById('next-page-btn');
+    // Single Tap Navigation
+    document.querySelectorAll('.page').forEach(page => {
+        page.addEventListener('pointerdown', (e) => {
+            if (e.target.closest('a') || e.target.closest('button')) {
+                return;
+            }
 
-    if (prevBtn) prevBtn.addEventListener('click', () => pageFlip.flipPrev());
-    if (nextBtn) nextBtn.addEventListener('click', () => pageFlip.flipNext());
+            const rect = page.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+
+            e.stopPropagation();
+
+            if (clickX > rect.width / 2) {
+                pageFlip.flipNext('top');
+            } else {
+                pageFlip.flipPrev('top');
+            }
+        });
+    });
 });
