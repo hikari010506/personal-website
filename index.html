@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hikari Kibutsuji's Personal Website</title>
+    <title>Hikari's Personal Website</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,12 @@
 
 <!-- Page Flip Container -->
 <div class="book-wrapper">
+    
+    <!-- Navigation Arrow Left -->
+    <button id="prev-page-btn" class="nav-btn left-btn" aria-label="Previous Page">
+        <i class="ri-arrow-left-s-line"></i>
+    </button>
+
     <div id="book">
         
         <!-- PAGE 1: WELCOME COVER -->
@@ -26,7 +32,7 @@
             <div class="page-content">
                 <div class="glass hero-card">
                     <h1>Welcome to my personal website!</h1>
-                    <p class="subtitle" style="margin-top: 10px;">Turn the page to get to know me!</p>
+                    <p class="subtitle" style="margin-top: 10px;">Tap anywhere or turn the page to get to know me!</p>
                     <img src="kaito-yoroshiku.png" alt="KAITO Yoroshiku" class="welcome-img">
                 </div>
             </div>
@@ -94,7 +100,7 @@
         <div class="page">
             <div class="page-content">
                 <div class="glass section-card">
-                    <h2>Oshis</h2>
+                    <h2>Main Oshis</h2>
                     <p class="oshi-note">⭐ = Main in the fandom</p>
                     <div class="oshi-grid">
                         <div class="oshi-card">
@@ -200,6 +206,12 @@
         </div>
 
     </div>
+
+    <!-- Navigation Arrow Right -->
+    <button id="next-page-btn" class="nav-btn right-btn" aria-label="Next Page">
+        <i class="ri-arrow-right-s-line"></i>
+    </button>
+
 </div>
 
 <!-- Page Flip Library & Script -->
