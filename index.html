@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hikari's Personal Website</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Remix Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Remix Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -17,206 +15,176 @@
 
 <div class="background"></div>
 
-<!-- Page Flip Container -->
-<div class="book-wrapper">
+<!-- Tap Area Container -->
+<div class="slider-container" id="sliderContainer">
     
-    <!-- Navigation Arrow Left -->
-    <button id="prev-page-btn" class="nav-btn left-btn" aria-label="Previous Page">
-        <i class="ri-arrow-left-s-line"></i>
-    </button>
-
-    <div id="book">
-        
-        <!-- PAGE 1: WELCOME COVER -->
-        <div class="page" data-density="hard">
-            <div class="page-content">
-                <div class="glass hero-card">
-                    <h1>Welcome to my personal website!</h1>
-                    <p class="subtitle" style="margin-top: 10px;">Tap anywhere or turn the page to get to know me!</p>
-                    <img src="kaito-yoroshiku.png" alt="KAITO Yoroshiku" class="welcome-img">
-                </div>
-            </div>
+    <!-- PAGE 1: WELCOME COVER -->
+    <div class="slide active">
+        <div class="glass hero-card">
+            <h1>Welcome to my personal website!</h1>
+            <p class="subtitle">Tap right side to start ➔</p>
+            <img src="images/kaito-yoroshiku.png" alt="KAITO Yoroshiku" class="welcome-img">
         </div>
-
-        <!-- PAGE 2: PROFILE / HERO -->
-        <div class="page">
-            <div class="page-content">
-                <div class="glass hero-card">
-                    <img src="muzan-pfp.jpg" alt="Profile" class="profile">
-                    <h1>Hikari</h1>
-                    <p class="subtitle">20↑ • AroAce</p>
-                    <p class="role">
-                        BSIT Student 💻💕<br>
-                        Muzan's Wife ♡
-                    </p>
-                    <div class="socials">
-                        <a href="https://www.facebook.com/asawanimuzan0106/" target="_blank"><i class="ri-facebook-circle-fill"></i></a>
-                        <a href="https://x.com/Hikariii0106" target="_blank"><i class="ri-twitter-x-fill"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE 3: ABOUT ME -->
-        <div class="page">
-            <div class="page-content">
-                <div class="glass section-card">
-                    <h2>About Me</h2>
-                    <ul>
-                        <li><strong>Name:</strong> Hikari (feel free to give me nicknames)</li>
-                        <li><strong>Age:</strong> 20↑</li>
-                        <li><strong>Birthday:</strong> January 06</li>
-                        <li><strong>Languages:</strong> English, Tagalog, Hiligaynon, Bisaya</li>
-                        <li><strong>Learning:</strong> Japanese (Hiragana, Katakana, Kanji) & German</li>
-                        <li><strong>Hobbies:</strong> Mobile games, Manga, Music</li>
-                        <li><strong>Interests:</strong> Anime, Joseimuke Games, Theater, Classical & Orchestra Music</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE 4: FANDOMS / INTERESTS -->
-        <div class="page">
-            <div class="page-content">
-                <div class="glass section-card">
-                    <h2>Interests / Fandoms</h2>
-                    <div class="tags">
-                        <a href="https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba" target="_blank" class="tag-btn">Demon Slayer</a>
-                        <a href="https://twistedwonderland.wiki.gg/" target="_blank" class="tag-btn">Twisted Wonderland</a>
-                        <a href="https://myanimelist.net/anime/38691/Dr_Stone" target="_blank" class="tag-btn">Dr. Stone</a>
-                        <a href="https://myanimelist.net/anime/4898/Kuroshitsuji" target="_blank" class="tag-btn">Black Butler</a>
-                        <a href="https://myanimelist.net/people" target="_blank" class="tag-btn">Seiyuu</a>
-                        <a href="https://myanimelist.net/anime/33899/IDOLiSH7" target="_blank" class="tag-btn">Idolish7</a>
-                        <a href="https://www.sekaipedia.org/wiki/Main_Page" target="_blank" class="tag-btn">Project SEKAI</a>
-                        <a href="https://myanimelist.net/anime/15051/Love_Live_School_Idol_Project" target="_blank" class="tag-btn">Love Live!</a>
-                        <a href="https://myanimelist.net/anime/33573/BanG_Dream" target="_blank" class="tag-btn">BanG Dream!</a>
-                        <a href="https://myanimelist.net/anime/10321/Uta_no☆Prince-sama♪_Maji_Love_1000" target="_blank" class="tag-btn">Uta no Prince-sama</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE 5: MAIN OSHIS -->
-        <div class="page">
-            <div class="page-content">
-                <div class="glass section-card">
-                    <h2>Main Oshis</h2>
-                    <p class="oshi-note">⭐ = Main in the fandom</p>
-                    <div class="oshi-grid">
-                        <div class="oshi-card">
-                            <h3>Demon Slayer</h3>
-                            <p>⭐ Muzan Kibutsuji</p>
-                            <p>⭐ Douma</p>
-                            <p>Shinobu Kocho</p>
-                        </div>
-                        <div class="oshi-card">
-                            <h3>Twisted Wonderland</h3>
-                            <p>⭐ Idia Shroud</p>
-                            <p>Jade Leech</p>
-                            <p>Malleus Draconia</p>
-                            <p>Riddle Rosehearts</p>
-                            <p>Lilia Vanrouge</p>
-                        </div>
-                        <div class="oshi-card">
-                            <h3>Black Butler</h3>
-                            <p>⭐ Sebastian Michaelis</p>
-                            <p>Agni</p>
-                            <p>Lau</p>
-                            <p>Snake</p>
-                        </div>
-                        <div class="oshi-card">
-                            <h3>Project SEKAI</h3>
-                            <p>⭐ KAITO</p>
-                            <p>Rui Kamishiro</p>
-                        </div>
-                        <div class="oshi-card">
-                            <h3>Dr. Stone</h3>
-                            <p>⭐ Tsukasa Shishio</p>
-                            <p>Gen Asagiri</p>
-                            <p>Senku Ishigami</p>
-                        </div>
-                        <div class="oshi-card">
-                            <h3>Seiyuu</h3>
-                            <p>⭐ Ono Daisuke</p>
-                            <p>Komada Wataru</p>
-                            <p>Fukuyama Jun</p>
-                            <p>Hanae Natsuki</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE 6: BEFORE YOU FOLLOW -->
-        <div class="page">
-            <div class="page-content">
-                <div class="glass section-card">
-                    <h2>Before You Follow</h2>
-                    <ul>
-                        <li>I tend to get noisy on social media.</li>
-                        <li>I love Muzan Kibutsuji and Jade Leech.</li>
-                        <li>I'm delulu over my favorite characters.</li>
-                        <li>I support OC × Canon and Yume ships.</li>
-                        <li>I'm pro-fiction (Fiction ≠ Reality).</li>
-                        <li>I swear and keysmash sometimes.</li>
-                        <li>I interact like we're close friends.</li>
-                        <li>ALL CAPS doesn't mean I'm angry.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE 7: DO NOT INTERACT -->
-        <div class="page">
-            <div class="page-content">
-                <div class="glass section-card warning">
-                    <h2>Do Not Interact</h2>
-                    <ul>
-                        <li>Creepy people</li>
-                        <li>Pedophiles</li>
-                        <li>Problematic users</li>
-                        <li>People who spread harmful discourse</li>
-                        <li>Anti-LGBTQIA+</li>
-                        <li>People who don't respect boundaries</li>
-                        <li>People against yume-shipping</li>
-                    </ul>
-                    <footer>Made by Hikari Kibutsuji</footer>
-                </div>
-            </div>
-        </div>
-
-        <!-- PAGE 8: KAITO GALLERY -->
-        <div class="page" data-density="hard">
-            <div class="page-content">
-                <div class="glass section-card gallery-card">
-                    <h2>Gallery</h2>
-                    <div class="kaito-gallery">
-                        <div class="kaito-img-box">
-                            <img src="kaito-haha.png" alt="KAITO Haha">
-                        </div>
-                        <div class="kaito-img-box">
-                            <img src="kaito-wah!.png" alt="KAITO Wah!">
-                        </div>
-                        <div class="kaito-img-box">
-                            <img src="kaito-arigato.png" alt="KAITO Arigato">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- Navigation Arrow Right -->
-    <button id="next-page-btn" class="nav-btn right-btn" aria-label="Next Page">
-        <i class="ri-arrow-right-s-line"></i>
-    </button>
+    <!-- PAGE 2: PROFILE -->
+    <div class="slide">
+        <div class="glass hero-card">
+            <img src="muzan-pfp.jpg" alt="Profile" class="profile">
+            <h1>Hikari</h1>
+            <p class="subtitle">20↑ • AroAce</p>
+            <p class="role">
+                BSIT Student 💻💕<br>
+                Muzan's Wife ♡
+            </p>
+            <div class="socials">
+                <a href="https://www.facebook.com/asawanimuzan0106/" target="_blank"><i class="ri-facebook-circle-fill"></i></a>
+                <a href="https://x.com/Hikariii0106" target="_blank"><i class="ri-twitter-x-fill"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 3: ABOUT ME -->
+    <div class="slide">
+        <div class="glass section-card">
+            <h2>About Me</h2>
+            <ul>
+                <li><strong>Name:</strong> Hikari (feel free to give me nicknames)</li>
+                <li><strong>Age:</strong> 20↑</li>
+                <li><strong>Birthday:</strong> January 06</li>
+                <li><strong>Languages:</strong> English, Tagalog, Hiligaynon, Bisaya</li>
+                <li><strong>Learning:</strong> Japanese (Hiragana, Katakana, Kanji) & German</li>
+                <li><strong>Hobbies:</strong> Mobile games, Manga, Music</li>
+                <li><strong>Interests:</strong> Anime, Joseimuke Games, Theater, Classical & Orchestra Music</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PAGE 4: INTERACTION / FANDOMS -->
+    <div class="slide">
+        <div class="glass section-card">
+            <h2>Interests / Fandoms</h2>
+            <div class="tags">
+                <a href="https://myanimelist.net/anime/38000/Kimetsu_no_Yaiba" target="_blank" class="tag-btn">Demon Slayer</a>
+                <a href="https://twistedwonderland.wiki.gg/" target="_blank" class="tag-btn">Twisted Wonderland</a>
+                <a href="https://myanimelist.net/anime/38691/Dr_Stone" target="_blank" class="tag-btn">Dr. Stone</a>
+                <a href="https://myanimelist.net/anime/4898/Kuroshitsuji" target="_blank" class="tag-btn">Black Butler</a>
+                <a href="https://myanimelist.net/people" target="_blank" class="tag-btn">Seiyuu</a>
+                <a href="https://myanimelist.net/anime/33899/IDOLiSH7" target="_blank" class="tag-btn">Idolish7</a>
+                <a href="https://www.sekaipedia.org/wiki/Main_Page" target="_blank" class="tag-btn">Project SEKAI</a>
+                <a href="https://myanimelist.net/anime/15051/Love_Live_School_Idol_Project" target="_blank" class="tag-btn">Love Live!</a>
+                <a href="https://myanimelist.net/anime/33573/BanG_Dream" target="_blank" class="tag-btn">BanG Dream!</a>
+                <a href="https://myanimelist.net/anime/10321/Uta_no☆Prince-sama♪_Maji_Love_1000" target="_blank" class="tag-btn">Uta no Prince-sama</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 5: MAIN OSHIS -->
+    <div class="slide">
+        <div class="glass section-card">
+            <h2>Main Oshis</h2>
+            <p class="oshi-note">⭐ = Main in the fandom</p>
+            <div class="oshi-grid">
+                <div class="oshi-card">
+                    <h3>Demon Slayer</h3>
+                    <p>⭐ Muzan Kibutsuji</p>
+                    <p>⭐ Douma</p>
+                    <p>Shinobu Kocho</p>
+                </div>
+                <div class="oshi-card">
+                    <h3>Twisted Wonderland</h3>
+                    <p>⭐ Idia Shroud</p>
+                    <p>Jade Leech</p>
+                    <p>Malleus Draconia</p>
+                    <p>Riddle Rosehearts</p>
+                    <p>Lilia Vanrouge</p>
+                </div>
+                <div class="oshi-card">
+                    <h3>Black Butler</h3>
+                    <p>⭐ Sebastian Michaelis</p>
+                    <p>Agni</p>
+                    <p>Lau</p>
+                    <p>Snake</p>
+                </div>
+                <div class="oshi-card">
+                    <h3>Project SEKAI</h3>
+                    <p>⭐ KAITO</p>
+                    <p>Rui Kamishiro</p>
+                </div>
+                <div class="oshi-card">
+                    <h3>Dr. Stone</h3>
+                    <p>⭐ Tsukasa Shishio</p>
+                    <p>Gen Asagiri</p>
+                    <p>Senku Ishigami</p>
+                </div>
+                <div class="oshi-card">
+                    <h3>Seiyuu</h3>
+                    <p>⭐ Ono Daisuke</p>
+                    <p>Komada Wataru</p>
+                    <p>Fukuyama Jun</p>
+                    <p>Hanae Natsuki</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 6: BEFORE YOU FOLLOW -->
+    <div class="slide">
+        <div class="glass section-card">
+            <h2>Before You Follow</h2>
+            <ul>
+                <li>I tend to get noisy on social media.</li>
+                <li>I love Muzan Kibutsuji and Jade Leech.</li>
+                <li>I'm delulu over my favorite characters.</li>
+                <li>I support OC × Canon and Yume ships.</li>
+                <li>I'm pro-fiction (Fiction ≠ Reality).</li>
+                <li>I swear and keysmash sometimes.</li>
+                <li>I interact like we're close friends.</li>
+                <li>ALL CAPS doesn't mean I'm angry.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PAGE 7: DO NOT INTERACT -->
+    <div class="slide">
+        <div class="glass section-card warning">
+            <h2>Do Not Interact</h2>
+            <ul>
+                <li>Creepy people</li>
+                <li>Pedophiles</li>
+                <li>Problematic users</li>
+                <li>People who spread harmful discourse</li>
+                <li>Anti-LGBTQIA+</li>
+                <li>People who don't respect boundaries</li>
+                <li>People against yume-shipping</li>
+            </ul>
+            <footer>Made with 💙 by Hikari</footer>
+        </div>
+    </div>
+
+    <!-- PAGE 8: GALLERY -->
+    <div class="slide">
+        <div class="glass section-card gallery-card">
+            <h2>Gallery</h2>
+            <div class="kaito-gallery">
+                <div class="kaito-img-box">
+                    <img src="kaito-haha.png" alt="KAITO Haha">
+                </div>
+                <div class="kaito-img-box">
+                    <img src="kaito-wah!.png" alt="KAITO Wah!">
+                </div>
+                <div class="kaito-img-box">
+                    <img src="kaito-arigato.png" alt="KAITO Arigato">
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
-<!-- Page Flip Library & Script -->
-<script src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.js"></script>
-<script src="script.js"></script>
+<!-- Simple Page Indicator -->
+<div class="page-number" id="pageNumber">1 / 8</div>
 
+<script src="script.js"></script>
 </body>
 </html>
